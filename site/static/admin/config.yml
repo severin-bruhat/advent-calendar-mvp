@@ -46,3 +46,14 @@ collections: # A list of collections the CMS should be able to edit
                   { label: 'Text', name: 'text', widget: 'text' },
                 ],
             }
+      - file: 'site/content/about/_index.md'
+        label: 'About Us'
+        name: 'about'
+        fields:
+          - { label: Title, name: title, widget: string }
+          - {
+              label: 'Content',
+              name: content,
+              widget: object,
+              fields: [{ label: 'Text', name: 'text', widget: 'text' }],
+            }
