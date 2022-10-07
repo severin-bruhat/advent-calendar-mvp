@@ -51,9 +51,4 @@ collections: # A list of collections the CMS should be able to edit
         name: 'about'
         fields:
           - { label: Title, name: title, widget: string }
-          - {
-              label: 'Content',
-              name: content,
-              widget: object,
-              fields: [{ label: 'Text', name: 'text', widget: 'text' }],
-            }
+          - { label: 'Content', name: 'body', widget: 'markdown' }
