@@ -11,5 +11,5 @@ import AboutPreview from "./cms-preview-templates/about";
 CMS.registerPreviewStyle(styles, { raw: true });
 CMS.registerPreviewTemplate("home", HomePreview);
 CMS.registerPreviewTemplate("post", PostPreview);
-CMS.registerPreviewTemplate("post", AboutPreview);
+CMS.registerPreviewTemplate("about", AboutPreview);
 CMS.init();
