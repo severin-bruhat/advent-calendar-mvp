@@ -4,15 +4,20 @@
 		<h2 class="f2 b lh-title mb3">Current</h2>
 
 		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-			{{ range first 4 (where .Data.Pages "Type" "post") }}
-				<div class="ph1-ns w-50-ns flex">
-					{{ .Render "li" }}
-				</div>
-			{{ end }}
-		</div>
 
-		<div class="tc">
-			<a href="/post" class="btn raise">Read more</a>
+			{{ $currentDate :=  now | time.Format ":date_long"}}
+
+
+			{{ range  (where .Data.Pages "Type" "post")}}
+				{{ $postDate := .Date | time.Format ":date_long" }}
+
+				{{ if eq $currentDate $postDate }}
+					<div class="ph1-ns w-50-ns flex">
+						{{ .Render "single" }}
+					</div>
+				{{ end }}
+			{{ end }}
+
 		</div>
 
 	</div>
